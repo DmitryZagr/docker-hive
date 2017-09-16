@@ -63,5 +63,5 @@ services:
     ports:
       - 8081:8080
     volumes:
-      - ./interpreter.json:/zeppelin/conf/interpreter.json
+      - ./conf/zeppelin/interpreter.json:/zeppelin/conf/interpreter.json
       
