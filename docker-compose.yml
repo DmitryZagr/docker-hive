@@ -4,7 +4,7 @@ services:
 
   namenode:
     image: bde2020/hadoop-namenode:1.2.1-hadoop2.8.1-java8
-    container_name: namenode
+    hostname: hive-server
     volumes:
       - ./data/namenode:/hadoop/dfs/name
     ports:
@@ -16,7 +16,6 @@ services:
 
   datanode:
     image: bde2020/hadoop-datanode:1.2.1-hadoop2.8.1-java8
-    container_name: datanode
     volumes:
       - ./data/datanode:/hadoop/dfs/data
     env_file:
@@ -26,7 +25,7 @@ services:
 
   hive-server:
     image: zagrebaev/hadoop-hive:2.2.0-hadoop2.8.1-java8
-    container_name: hive-server
+    hostname: hive-server
     env_file:
       - ./hadoop-hive.env
     environment:
@@ -54,7 +53,7 @@ services:
 
   presto-coordinator:
     image: shawnzhu/prestodb:0.181
-    container_name: presto-coordinator
+    hostname: presto-coordinator
     ports:
       - "8080:8080"
 
