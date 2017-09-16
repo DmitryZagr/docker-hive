@@ -23,7 +23,7 @@ services:
       - ./hadoop-hive.env
 
   hive-server:
-    image: zagrebaev/hadoop-hive:1.2.1-hadoop2.8.1-java8
+    image: zagrebaev/hadoop-hive:2.2.0-hadoop2.8.1-java8
     container_name: hive-server
     env_file:
       - ./hadoop-hive.env
@@ -33,14 +33,14 @@ services:
       - "10000:10000"
 
   hive-metastore:
-    image: zagrebaev/hadoop-hive:1.2.1-hadoop2.8.1-java8
+    image: zagrebaev/hadoop-hive:2.2.0-hadoop2.8.1-java8
     hostname: hive-metastore
     env_file:
       - ./hadoop-hive.env
     command: /opt/hive/bin/hive --service metastore
 
   hive-metastore-postgresql:
-    image: bde2020/hive-metastore-postgresql:2.2.0
+    image: bde2020/hive-metastore-postgresql:2.2.0-hadoop2.8.1-java8
     hostname: hive-metastore-postgresql
     volumes:
       - ./data/postgresql:/var/lib/postgresql/data
