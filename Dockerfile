@@ -1,9 +1,9 @@
-FROM bde2020/hadoop-base:1.1.0-hadoop2.8-java8
+FROM bde2020/hadoop-base:1.2.1-hadoop2.8.1-java8
 
 MAINTAINER Yiannis Mouchakis <gmouchakis@iit.demokritos.gr>
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 
-ENV HIVE_VERSION 2.1.1
+ENV HIVE_VERSION 2.2.0
 
 ENV HIVE_HOME /opt/hive
 ENV PATH $HIVE_HOME/bin:$PATH
