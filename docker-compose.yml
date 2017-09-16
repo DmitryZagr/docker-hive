@@ -57,4 +57,11 @@ services:
     container_name: presto-coordinator
     ports:
       - "8080:8080"
+
+  zeppelin:
+    image: apache/zeppelin:0.7.2
+    ports:
+      - 8081:8080
+    volumes:
+      - ./interpreter.json:/zeppelin/conf/interpreter.json
       
