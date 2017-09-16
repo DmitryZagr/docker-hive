@@ -21,6 +21,8 @@ services:
       - ./data/datanode:/hadoop/dfs/data
     env_file:
       - ./hadoop-hive.env
+    depends_on:
+      - namenode
 
   hive-server:
     image: zagrebaev/hadoop-hive:2.2.0-hadoop2.8.1-java8
@@ -31,6 +33,9 @@ services:
       - "HIVE_CORE_CONF_javax_jdo_option_ConnectionURL=jdbc:postgresql://hive-metastore/metastore"
     ports:
       - "10000:10000"
+    depends_on:
+      - namenode
+      - hive-metastore
 
   hive-metastore:
     image: zagrebaev/hadoop-hive:2.2.0-hadoop2.8.1-java8
@@ -38,6 +43,8 @@ services:
     env_file:
       - ./hadoop-hive.env
     command: /opt/hive/bin/hive --service metastore
+    depends_on:
+      - hive-metastore-postgresql
 
   hive-metastore-postgresql:
     image: bde2020/hive-metastore-postgresql:2.2.0-hadoop2.8.1-java8
