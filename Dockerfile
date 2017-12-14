@@ -1,4 +1,4 @@
-FROM bde2020/hadoop-base:1.2.1-hadoop2.8.1-java8
+FROM dmitryzagr/hadoop-base:1.2.1-hadoop2.8.1-java8
 
 MAINTAINER Yiannis Mouchakis <gmouchakis@iit.demokritos.gr>
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
