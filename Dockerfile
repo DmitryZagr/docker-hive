@@ -1,4 +1,4 @@
-FROM dmitryzagr/hadoop-base:hadoop3.0.0-java8
+FROM dmitryzagr/hadoop-base:hadoop3.0.1-java8
 
 MAINTAINER Yiannis Mouchakis <gmouchakis@iit.demokritos.gr>
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
